@@ -8,7 +8,7 @@ import Cart from "./components/Cart";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { db } from "./firebase";
 import { collection, getDocs, writeBatch, doc } from "firebase/firestore";
-import ProductDetail from "./pages/productDetails";
+import ProductDetail from "./pages/ProductDetails";
 import Wishlist from "./pages/Wishlist";
 
 import "./App.css";
