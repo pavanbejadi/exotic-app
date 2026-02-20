@@ -1,0 +1,281 @@
+/* --- Global Theme Variables --- */
+:root {
+  --primary-green: #2d5a27;
+  --dark-green: #1b3d2f;
+  --accent-gold: #a68b4c;
+  --bg-cream: #f9f7f2;
+  --text-dark: #1a1a1a;
+  --white: #ffffff;
+}
+
+/* --- Base Layout --- */
+.bg-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background-color: var(--white);
+  border-bottom: 1px solid #f0efeb;
+  height: 90px;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Container for Logo + Icons on Mobile */
+.nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* On desktop, this just wraps the logo */
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: -4px;
+}
+
+.logo-text {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.search-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 40px;
+  width: 100%;
+}
+
+.search-wrapper input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: 1px solid #d1cfc7;
+  background-color: #fcfbf7;
+  outline: none;
+  font-size: 14px;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.search-wrapper input:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 8px rgba(166, 139, 76, 0.2);
+  background-color: var(--white);
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  min-width: 120px;
+  justify-content: flex-end;
+}
+
+.icon-item {
+  color: var(--accent-gold);
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.icon-item:hover {
+  transform: translateY(-2px);
+  color: var(--primary-green);
+}
+
+.cart-wrapper {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--accent-gold);
+  color: white;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    135deg,
+    var(--dark-green) 0%,
+    var(--primary-green) 50%,
+    var(--accent-gold) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-description {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.shop-btn {
+  margin-top: 25px;
+  padding: 14px 45px;
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.shop-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  background-color: #386e31;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Product Section --- */
+.category-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin: 40px 5% 20px 5%;
+  color: var(--dark-green);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 5% 60px 5%;
+}
+
+/* --- Responsive Media Queries --- */
+
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    flex-direction: column;
+    padding: 15px 5%;
+  }
+
+  .nav-top {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    margin: 0;
+  }
+
+  .search-wrapper input {
+    max-width: 100%;
+  }
+
+  .hero-heading {
+    font-size: 2.2rem;
+  }
+
+  .category-heading {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-heading {
+    font-size: 1.8rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+}
+.btns-container {
+  margin: auto;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+.category-btn {
+  font-family: "Roboto";
+  color: var(--primary-green);
+  font-weight: 500;
+  font-size: 16px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.category-btn:hover {
+  color: var(--accent-gold);
+}
+.greeting-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the whole group in the hero section */
+  gap: 15px; /* Space between the image and the text */
+  margin-bottom: 10px;
+}
+
+.hero-avatar {
+  width: 60px; /* Slightly larger for the hero section */
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #c5a059; /* Your brand's gold/bronze color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.hero-heading {
+  margin: 0; /* Remove default margins to keep it aligned with the image */
+}

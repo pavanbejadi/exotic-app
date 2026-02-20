@@ -1,0 +1,291 @@
+:root {
+  --primary-green: #14532d; /* Forest Green */
+  --accent-gold: #c5a059;
+  --soft-sage: #f0f4f0;
+  --white: #ffffff;
+  --text-main: #1f2937;
+}
+
+.login-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  background: var(--soft-sage);
+  font-family: "Inter", sans-serif;
+}
+
+/* LEFT PANEL - BRANDING */
+.login-brand {
+  background:
+    linear-gradient(rgba(20, 83, 45, 0.9), rgba(20, 83, 45, 0.95)),
+    url("https://images.unsplash.com/photo-1610832958506-aa563384269d?q=80&w=2070&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border-radius: 32px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  padding: 80px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.leaf-icon {
+  font-size: 28px;
+  color: var(--accent-gold);
+}
+
+.brand-logo h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.brand-content h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.brand-content h1 span {
+  color: var(--accent-gold);
+}
+
+.brand-content p {
+  font-size: 18px;
+  margin-top: 20px;
+  max-width: 400px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* RIGHT PANEL - FORM */
+.login-form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-card {
+  background: var(--white);
+  width: 100%;
+  max-width: 420px;
+  padding: 48px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.form-header h2 {
+  font-size: 28px;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.form-header p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.input-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  outline: none;
+  transition: 0.3s;
+
+  background-color: #f9fafb; /* Light gray background */
+  color: #1f2937;
+}
+
+.input-field input:focus {
+  border-color: var(--primary-green);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(20, 83, 45, 0.1);
+}
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.main-login-btn {
+  width: 100%;
+  background: var(--primary-green);
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.main-login-btn:hover {
+  background: #114023;
+  transform: translateY(-2px);
+}
+
+.app-divider {
+  text-align: center;
+  margin: 24px 0;
+  position: relative;
+}
+
+.app-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.app-divider span {
+  background: white;
+  padding: 0 12px;
+  color: #9ca3af;
+  font-size: 14px;
+  position: relative;
+}
+
+.google-social-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: white;
+  border: 1.5px solid #e5e7eb;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.google-social-btn:hover {
+  background: #f9fafb;
+}
+
+.signup-redirect {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.signup-redirect span {
+  color: var(--primary-green);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .login-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+  .brand-content h1 {
+    font-size: 42px;
+  }
+  .login-brand {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .login-brand {
+    min-height: 35vh;
+    margin: 0;
+    border-radius: 0 0 40px 40px;
+    padding: 40px 24px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .brand-logo {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .brand-content p {
+    display: none;
+  }
+  .brand-content h1 {
+    font-size: 32px;
+    margin-top: 0;
+  }
+
+  .login-form-wrapper {
+    padding: 20px;
+    margin-top: -60px; /* Overlap effect */
+  }
+
+  .login-card {
+    padding: 32px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+}
+/* Keep your existing CSS, just ensure these specific properties exist */
+
+.signup-redirect span {
+  color: var(--primary-green); /* Or your forest green hex */
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 5px;
+  color: black;
+}
+
+.signup-redirect span:hover {
+  color: var(--accent-gold);
+}
+
+/* Ensure the card can grow slightly if Name field appears */
+.login-card {
+  transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,184 @@
+/* --- Desktop Defaults --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0efeb;
+  height: 90px;
+  width: 100%;
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  padding: 0 5%;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.logo-text {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #c5a059;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.search-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 40px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: 1px solid #d1cfc7;
+  background-color: #fcfbf7;
+  outline: none;
+}
+
+/* --- Desktop Icons --- */
+.nav-links-vertical {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-item-mobile {
+  display: flex;
+  align-items: center;
+  color: #c5a059;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  gap: 8px;
+}
+
+.nav-item-mobile .nav-label {
+  display: none; /* Hide desktop labels */
+}
+
+/* --- Cart & Badge --- */
+.cart-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Prevent the badge from being hidden by parent containers */
+  overflow: visible !important;
+}
+
+.badge {
+  position: absolute;
+  /* Adjusting coordinates to sit on the top-right of the icon */
+  top: -10px;
+  right: -12px;
+  background-color: #ef4444; /* Bright red */
+  color: #ffffff !important; /* Force white text */
+  font-size: 11px;
+  font-weight: 700;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff; /* Contrast ring */
+  z-index: 1100; /* Must be higher than the navbar's z-index */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: #c5a059;
+}
+.nav-item-mobile .nav-label {
+  display: none; /* Hidden on desktop labels only */
+}
+
+/* --- MOBILE STYLES (Real App Layout) --- */
+@media (max-width: 850px) {
+  .nav-item-mobile .nav-label {
+    display: inline;
+    font-weight: 500;
+  }
+  .navbar {
+    height: 70px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .search-wrapper {
+    margin: 0 0 15px 0;
+    width: 100%;
+  }
+
+  .nav-links-vertical {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  /* Each list item: Profile, Wishlist, Cart, Logout */
+  .nav-item-mobile {
+    width: 100%;
+    padding: 15px;
+    border-bottom: 1px solid #f8f8f8;
+    color: #333;
+    justify-content: flex-start; /* Align all to left */
+    gap: 20px;
+    font-size: 18px;
+  }
+
+  .nav-item-mobile .nav-label {
+    display: inline; /* Show "My Cart", "Logout", etc. */
+    font-weight: 500;
+  }
+
+  .nav-item-mobile .cart-wrapper {
+    font-size: 24px;
+    color: #c5a059; /* Keeps icon gold */
+  }
+
+  .logout-mobile {
+    color: #dc2626;
+    border-bottom: none;
+  }
+}
